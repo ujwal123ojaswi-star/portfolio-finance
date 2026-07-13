@@ -23,7 +23,7 @@ export function Projects() {
       <SectionHeading
         eyebrow="Projects"
         title="Selected Projects"
-        description="4 projects spanning financial modeling, portfolio analysis, credit risk, and equity research. Filter by stack, or open the GitHub repo and live demo directly on each card."
+        description="6 projects spanning DCF valuation, FP&A, portfolio analysis, credit risk, and equity research. Filter by stack, or open the GitHub repo and live demo directly on each card."
       />
 
       <div className="mb-8 flex flex-wrap gap-2">

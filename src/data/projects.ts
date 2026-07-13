@@ -2,6 +2,38 @@ import type { Project } from '@/types'
 
 export const projects: Project[] = [
   {
+    id: 'dcf-valuation-comps',
+    title: 'DCF & Comparable Company Analysis — Starbucks (SBUX)',
+    description:
+      'Discounted cash flow and comparable company analysis built entirely on real, live-pulled market data — historical financials, beta, Treasury yield, and peer trading multiples, not synthetic inputs.',
+    bullets: [
+      'Computed WACC from CAPM (real beta, live 10-year Treasury yield) and projected 5-year free cash flow, cross-checking Gordon Growth and exit-multiple terminal value methods against a live 5-peer comps set.',
+      'Delivered a full sensitivity grid (WACC × terminal growth, WACC × exit multiple) and a football-field valuation summary comparing DCF and comps ranges against the current market price.',
+    ],
+    stack: ['Python', 'yfinance', 'DCF Modeling', 'Excel'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/dcf-valuation-comps',
+    demoUrl: 'https://dcf-comps-demo.vercel.app',
+    metrics: [
+      { label: 'WACC', value: 8.16, max: 15, displayValue: '8.16%' },
+    ],
+  },
+  {
+    id: 'fpa-budget-forecast',
+    title: 'FP&A: Budget vs Actual & Rolling Forecast',
+    description:
+      '3 years of monthly Budget vs Actual data across 3 product lines and 3 opex departments, with price/volume variance decomposition, an operating income bridge, and a driver-based rolling 12-month forecast.',
+    bullets: [
+      'Decomposed revenue variance into price and volume effects (exact bridge) and built a full FY operating income bridge from Budget to Actual across 3 product lines and 3 departments.',
+      'Built a driver-based rolling forecast with Best/Base/Worst scenarios, back-tested against a prior fiscal year for a real forecast-accuracy figure (12% MAPE) rather than an untested method.',
+    ],
+    stack: ['Python', 'Excel', 'FP&A', 'Variance Analysis'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/fpa-budget-forecast',
+    demoUrl: 'https://fpa-forecast-demo.vercel.app',
+    metrics: [
+      { label: 'Revenue Attainment (FY25)', value: 98.2, max: 100, displayValue: '98.2%' },
+    ],
+  },
+  {
     id: 'walget-retail-profitability',
     title: 'WALGET Retail Profitability Analysis',
     description:
