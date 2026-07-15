@@ -2,6 +2,22 @@ import type { Project } from '@/types'
 
 export const projects: Project[] = [
   {
+    id: 'fixed-income-analytics',
+    title: 'Fixed Income Analytics — Bond Pricing, Duration & Convexity',
+    description:
+      'Bond pricing, YTM solving, duration/convexity, and yield curve analysis built on real, live public US Treasury par yield data — including the real 2022-2023 curve inversion and its normalization through 2026.',
+    bullets: [
+      'Priced bonds from first principles and solved for YTM via root-finding (validated with a round-trip test: price → solve YTM → recover the original yield to within 0.0001bp).',
+      'Computed duration and convexity numerically via finite differences on the pricing function itself, then stress-tested 4 benchmark bonds and a hypothetical portfolio against ±50/100/200bp yield shifts, showing how much convexity improves the estimate over duration alone.',
+    ],
+    stack: ['Python', 'Fixed Income', 'Excel', 'scipy'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/fixed-income-analytics',
+    demoUrl: 'https://fixed-income-demo.vercel.app',
+    metrics: [
+      { label: 'YTM Solver Round-Trip Error', value: 0, max: 1, displayValue: '0.0000 bp' },
+    ],
+  },
+  {
     id: 'dcf-valuation-comps',
     title: 'DCF & Comparable Company Analysis — Starbucks (SBUX)',
     description:
