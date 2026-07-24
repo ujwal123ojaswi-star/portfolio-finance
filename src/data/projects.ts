@@ -51,14 +51,14 @@ export const projects: Project[] = [
   },
   {
     id: 'walget-retail-profitability',
-    title: 'WALGET Retail Profitability Analysis',
+    title: 'Retail Profitability Analysis (Walmart vs Target)',
     description:
-      'Analyzed 10 years of Walmart and Target financial data (40+ quarterly filings) by integrating SEC 10-K data with FRED macroeconomic datasets.',
+      'Analyzed a decade of Walmart and Target financial data to compare gross- and operating-margin durability across cost-leadership and differentiation strategies through demand and inflation shocks.',
     bullets: [
-      'Performed EDA, OLS/logistic regression, and ANOVA testing across 15+ financial variables to identify statistically significant drivers of revenue growth and margin performance.',
-      'Built profitability dashboards that quantified a 3–5 percentage-point margin gap between cost-leadership and differentiation strategies over the 10-year period.',
+      'Analyzed a decade of retail financials to compare gross- and operating-margin durability across two strategies and how each holds up through demand and inflation shocks.',
+      'Delivered the analysis as an interactive dashboard for non-technical stakeholders, with automated data-quality checks ensuring reliable underlying numbers.',
     ],
-    stack: ['Python', 'Pandas', 'Statistical Modeling'],
+    stack: ['Python', 'DuckDB', 'Streamlit'],
     githubUrl: 'https://github.com/ujwal123ojaswi-star/retail-profitability-pipeline',
     demoUrl: 'https://retail-profitability-pipeline-qp88mbfowdehta4ptt4du2.streamlit.app/',
   },
