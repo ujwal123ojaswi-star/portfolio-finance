@@ -108,4 +108,21 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/ujwal123ojaswi-star/sec-filing-rag',
     demoUrl: 'https://sec-filing-rag-hgkkrmujxdkjrwcjfzrvd9.streamlit.app/',
   },
+  {
+    id: 'supply-chain-ariba-analytics',
+    title: 'Supply Chain & Procurement Analytics (SAP Ariba-Modeled)',
+    description:
+      'Procurement analytics on data modeled after SAP Ariba’s real data structures (Supplier Master, Purchase Orders, Invoices, Sourcing Events, Contracts) — 45 suppliers, 1,106 POs/invoices across 24 months, 14 sourcing events.',
+    bullets: [
+      'Built a three-way match engine comparing PO vs. invoiced price/quantity across 1,106 PO↔invoice pairs, flagging 85 exceptions (7.69% exception rate) representing $882,620 in invoice value above the matching PO amount.',
+      'Identified $131.1M (46.2%) of PO spend as maverick (off-contract), and built a supplier risk & performance scorecard classifying suppliers into Low Risk / Watch / High Risk tiers.',
+      'Tracked 14 sourcing events realizing $2.73M in savings (11.5% average), and built ABC/Pareto spend analysis by category and supplier, delivered as a buyer-ready Excel workbook alongside a live dashboard.',
+    ],
+    stack: ['Python', 'SAP Ariba', 'Procurement Analytics', 'Excel'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/supply-chain-ariba-analytics',
+    demoUrl: 'https://ariba-analytics-demo.vercel.app',
+    metrics: [
+      { label: 'Sourcing savings realized', value: 2731213, max: 24779490, displayValue: '$2.73M (11.5%)' },
+    ],
+  },
 ]
