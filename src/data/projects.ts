@@ -18,6 +18,24 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'custodian-reconciliation-analytics',
+    title: 'Custodian Reconciliation & Portfolio Operations Analytics',
+    description:
+      'Investment operations analytics reconciling a firm’s internal fixed-income book of record against a separately generated custodian bank statement, applying the same three-way-match/exception-aging pattern used in the SAP Ariba-modeled procurement project to back/middle-office investment operations. Self-directed project on synthetic data modeled after realistic custodian-reconciliation workflows, not a claim of professional back-office experience.',
+    bullets: [
+      'Independently matched 82 positions ($542.5M market value) between book of record and custodian statement — price, quantity, and accrued interest each compared directly — then cross-checked the merge-detected exceptions against a persistent break-tracking log with 0 mismatches (19 vs. 19 open exceptions).',
+      'Classified 87 reconciliation breaks this period by root cause (price difference, quantity/trade timing, accrued interest difference, missing/extra at custodian, corporate action timing), aged the 23 open breaks by days outstanding, and tracked an 8.9-day average time-to-resolve across 64 resolved breaks.',
+      'Built an income receivable aging view (coupon income booked vs. cash received, $8,070 outstanding across 4 events, oldest 18 days) and a collateral tracker across 18 repo/derivative-margin positions, flagging 4 under- and 2 over-collateralized positions against $23.85M required collateral.',
+    ],
+    stack: ['Python', 'Investment Operations', 'Reconciliation', 'Excel'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/custodian-reconciliation-analytics',
+    demoUrl: 'https://custodian-reconciliation-demo.vercel.app',
+    metrics: [
+      { label: 'Reconciliation exception rate', value: 23.17, max: 100, displayValue: '23.17%' },
+      { label: 'Break-log cross-check match', value: 100, max: 100, displayValue: '100% (0 mismatches)' },
+    ],
+  },
+  {
     id: 'dcf-valuation-comps',
     title: 'DCF & Comparable Company Analysis — Starbucks (SBUX)',
     description:
@@ -53,14 +71,17 @@ export const projects: Project[] = [
     id: 'walget-retail-profitability',
     title: 'Retail Profitability Analysis (Walmart vs Target)',
     description:
-      'Analyzed a decade of Walmart and Target financial data to compare gross- and operating-margin durability across cost-leadership and differentiation strategies through demand and inflation shocks.',
+      'Analyzed 18 years (2008-2026) of Walmart and Target SEC filings and FRED macro data to compare gross- and operating-margin durability across cost-leadership and differentiation strategies through demand and inflation shocks.',
     bullets: [
-      'Analyzed a decade of retail financials to compare gross- and operating-margin durability across two strategies and how each holds up through demand and inflation shocks.',
-      'Delivered the analysis as an interactive dashboard for non-technical stakeholders, with automated data-quality checks ensuring reliable underlying numbers.',
+      'Computed gross- and operating-margin volatility (std. dev.) across 144 company-quarters from a DuckDB + dbt warehouse: Target runs higher average margins, but Walmart’s are structurally steadier — 3.8x lower gross-margin volatility and 2.2x lower operating-margin volatility than Target.',
+      'Delivered the analysis as an interactive dashboard for non-technical stakeholders, with automated data-quality checks (not-null, uniqueness, referential integrity, accepted-range on margins) ensuring reliable underlying numbers.',
     ],
-    stack: ['Python', 'DuckDB', 'Streamlit'],
+    stack: ['Python', 'DuckDB', 'dbt', 'Streamlit'],
     githubUrl: 'https://github.com/ujwal123ojaswi-star/retail-profitability-pipeline',
-    demoUrl: 'https://retail-profitability-pipeline-qp88mbfowdehta4ptt4du2.streamlit.app/',
+    demoUrl: 'https://retail-profitability-demo.vercel.app',
+    metrics: [
+      { label: 'Margin volatility (TGT vs WMT, gross)', value: 3.8, max: 5, displayValue: '3.8x higher at TGT' },
+    ],
   },
   {
     id: 'portfolio-optimization',
@@ -79,20 +100,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'credit-risk-prediction',
-    title: 'Credit Risk Prediction Using Machine Learning',
+    id: 'credit-risk-scoring',
+    title: 'Credit Risk Scoring — Default Prediction (UCI Credit Card Clients)',
     description:
-      'End-to-end credit risk model on the German Credit Dataset (1,000 borrower records, 20+ features) to classify low/high-risk borrowers.',
+      'Credit-risk scorecard on 30,000 real Taiwanese credit card accounts (UCI "Default of Credit Card Clients" dataset) — feature-engineered utilization, payment-coverage, and delinquency-history signals, validated with the metrics a retail bank’s risk team actually uses.',
     bullets: [
-      'Applied feature engineering, one-hot encoding, and SMOTE balancing, improving minority-class (default) recall by an estimated 15–20% over the baseline model.',
-      'Benchmarked 7 classification algorithms (Random Forest, Logistic Regression, SVM, Decision Tree, KNN, Naïve Bayes, Neural Networks); achieved 82–83% accuracy and 0.91 ROC-AUC with Random Forest, the top performer.',
+      'Engineered 20 behavioral features from repayment-status history and 6 months of bill/payment amounts (utilization ratios, payment-to-bill coverage, delinquency streaks) instead of feeding raw columns into the model; trained logistic regression and a sample-weighted gradient boosting model against the 22.1% default rate.',
+      'Validated with real scorecard metrics — ROC-AUC 0.777, Gini coefficient 0.555, KS statistic 0.417 — and a risk-decile loss-concentration analysis showing the riskiest 10% of borrowers account for 31.2% of all defaults (69.1% default rate vs. a 22.1% portfolio average), plus a calibration check confirming the score is well rank-ordered.',
     ],
-    stack: ['Python', 'Scikit-Learn', 'SMOTE', 'Risk Analytics'],
-    githubUrl: '#',
-    demoUrl: '#',
+    stack: ['Python', 'Scikit-Learn', 'Gradient Boosting', 'Credit Risk Analytics'],
+    githubUrl: 'https://github.com/ujwal123ojaswi-star/credit-risk-scoring',
+    demoUrl: 'https://credit-risk-demo-six.vercel.app',
     metrics: [
-      { label: 'Accuracy (Random Forest)', value: 82.5, displayValue: '82–83%' },
-      { label: 'ROC-AUC', value: 0.91, max: 1, displayValue: '0.91' },
+      { label: 'ROC-AUC (Gradient Boosting)', value: 0.777, max: 1, displayValue: '0.777' },
+      { label: 'Top-decile default capture', value: 31.2, max: 100, displayValue: '31.2%' },
     ],
   },
   {

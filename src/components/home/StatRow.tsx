@@ -5,7 +5,7 @@ import { fadeUp, staggerContainer } from '@/lib/motion'
 
 const stats = [
   { value: 3, label: 'Experience Roles' },
-  { value: 8, label: 'Featured Projects' },
+  { value: 9, label: 'Featured Projects' },
   { value: 2, label: 'Degrees' },
 ]
 
